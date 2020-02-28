@@ -51,7 +51,7 @@ public final class Constants {
     public static final double kaVoltSecondsSquaredPerMeter = 0.402;
 
     // Example value only - as above, this must be tuned for your drive!
-    public static final double kPDriveVel = 3.0;
+    public static final double kPDriveVel = 15;
   }
 
   public static final class OIConstants {
@@ -59,8 +59,8 @@ public final class Constants {
   }
 
   public static final class AutoConstants {
-    public static final double kMaxSpeedMetersPerSecond = 2;
-    public static final double kMaxAccelerationMetersPerSecondSquared = 2;
+    public static final double kMaxSpeedMetersPerSecond = 1;
+    public static final double kMaxAccelerationMetersPerSecondSquared = 1;
 
     // Reasonable baseline values for a RAMSETE follower in units of meters and seconds
     public static final double kRamseteB = 2;
