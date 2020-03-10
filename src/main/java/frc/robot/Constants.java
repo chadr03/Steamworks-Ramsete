@@ -52,6 +52,12 @@ public final class Constants {
 
     // Example value only - as above, this must be tuned for your drive!
     public static final double kPDriveVel = 15;
+
+    public static final double kMaxSpeedMetersPerSecond = 0.6;
+    public static final double kMaxAccelerationMetersPerSecondSquared = 0.6;
+
+    public static final double kRamseteB = 2;
+    public static final double kRamseteZeta = 0.7;
   }
 
   public static final class OIConstants {
