@@ -27,8 +27,8 @@ import frc.robot.subsystems.DriveSubsystem;
  * Add your docs here.
  */
 public class SneakyTrajectory {
-        public Trajectory centerRightAutoBackwards, centerRightAutoForward, uTurn, rightTurn, sTurnForward, sTurnBackward;
-       
+        public Trajectory centerRightAutoBackwards, centerRightAutoForward, uTurn, rightTurn, sTurnForward, sTurnBackward, barrelRace;
+        //public Trajectory centerRightAutoBackwards, centerRightAutoForward, uTurn, rightTurn, sTurnForward, sTurnBackward, barrelRace;
         private DriveSubsystem m_drive;
 
 
@@ -121,6 +121,46 @@ public class SneakyTrajectory {
                     new Pose2d(0, 0, Rotation2d.fromDegrees(0)),
                     // Pass config
                     configReversed);
+
+                barrelRace = TrajectoryGenerator.generateTrajectory(
+                        // Start at the origin facing the +X direction
+                    new Pose2d(0, 0, Rotation2d.fromDegrees(0)),
+                    // Pass through these two interior waypoints, making an 'barrel race' curve path
+                    List.of(
+                        new Translation2d( 0.7704, 0.1183),//2
+                        new Translation2d(1.8718, 0.2336),//3
+                        new Translation2d(2.5214, 0.2348),//4
+                        new Translation2d(3.3253, -0.3257),//5
+                        new Translation2d(3.3507, -1.1316),//6
+                        new Translation2d(2.7556, -1.4749),//7
+                        new Translation2d(2.1664, -1.2472),//8
+                        new Translation2d(2.0189, -0.7286),//9
+                        new Translation2d(2.2964, -0.2003),//10
+                        new Translation2d(2.9616, 0.0707),//11
+                        new Translation2d(3.6843, -0.0038),//12
+                        new Translation2d(4.8717, -0.2473),//13
+                        new Translation2d(5.7311, 0.0360),//14
+                        new Translation2d(6.0631, 0.7137),//15
+                        new Translation2d(5.9352, 1.2199),//16
+                        new Translation2d(4.7980, 1.4766),//17
+                        new Translation2d(4.2212, 0.8637),//18
+                        new Translation2d(4.3007, -0.0741),//19
+                        new Translation2d(5.0506, -0.9636),//20
+                        new Translation2d(6.1040, -1.4034),//21
+                        new Translation2d(6.7567, -1.3331),//22
+                        new Translation2d(7.1125, -1.0022),//23
+                        new Translation2d(7.1316, -0.5690),//24
+                        new Translation2d(6.7634, -0.0224),//25
+                        new Translation2d(6.2146, 0.1709),//26
+                        new Translation2d(5.2259, 0.1906),//27
+                        new Translation2d(3.0449, 0.1953)//28
+                    // new Translation2d(2, -1)
+                     ),
+                //     // End 3 meters straight ahead of where we started, facing forward
+                     new Pose2d(0.5, 0.1953, Rotation2d.fromDegrees(170)),
+                     //new Pose2d(2.0189, -0.7286, Rotation2d.fromDegrees(3.1)),
+                     // Pass config
+                     configForward);                
                 
 
         }

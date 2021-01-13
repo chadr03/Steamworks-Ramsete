@@ -70,12 +70,11 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     //SmartDashboard.putData("Path", new Path().path1(m_robotDrive).schedule());
-    SmartDashboard.putData("Reset Odometry", new InstantCommand(()->m_robotDrive.resetOdometry(new Pose2d(0, 0, new Rotation2d(0))), m_robotDrive));
-    
     configureButtonBindings();
   // Add commands to the autonomous command chooser
         m_chooser.addOption("U-Turn", s_trajectory.getRamsete(s_trajectory.uTurn));
         m_chooser.addOption("Right Turn", s_trajectory.getRamsete(s_trajectory.rightTurn));
+        m_chooser.addOption("Barrel Race", s_trajectory.getRamsete(s_trajectory.barrelRace));
         m_chooser.addOption("Center", new CenterRight6Cell(s_trajectory, led));
         m_chooser.addOption("Fake Auto", new FakeAutoCommand(s_trajectory, led, m_robotDrive));
        
